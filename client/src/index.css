@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-cream text-plum antialiased;
+}
+
+button,
+input,
+textarea,
+select {
+  @apply font-sans;
+}
+
+::selection {
+  background: rgba(201, 151, 122, 0.25);
+}
