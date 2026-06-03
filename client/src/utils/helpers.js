@@ -9,6 +9,6 @@ export const formatDate = (dateString) => {
 
 export const statusClass = (status) => {
   if (status === 'paid' || status === 'approved' || status === 'active') return 'bg-emerald-100 text-emerald-800';
-  if (status === 'pending' || status === 'in-progress') return 'bg-amber-100 text-amber-800';
+  if (status === 'pending' || status === 'inquiry' || status === 'in-progress') return 'bg-amber-100 text-amber-800';
   return 'bg-rose-100 text-rose-800';
 };

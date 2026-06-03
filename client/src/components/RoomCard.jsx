@@ -23,8 +23,8 @@ const RoomCard = ({ room }) => (
           <span key={item} className="rounded-full bg-cream px-3 py-1">{item}</span>
         ))}
       </div>
-      <Link to={`/rooms/${room._id}`} className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-plum px-5 py-3 text-sm font-semibold text-white transition hover:bg-rose-600">
-        View Details
+      <Link to={`/book/${room._id}`} className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-plum px-5 py-3 text-sm font-semibold text-white transition hover:bg-rose-600">
+        Book a Room
       </Link>
     </div>
   </motion.article>

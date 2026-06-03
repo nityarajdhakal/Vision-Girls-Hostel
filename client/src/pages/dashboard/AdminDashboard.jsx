@@ -295,7 +295,7 @@ const AdminDashboard = () => {
               <tbody className="divide-y divide-plum/10">
                 {bookings?.map((booking) => (
                   <tr key={booking._id}>
-                    <td className="px-6 py-4">{booking.resident?.name}</td>
+                    <td className="px-6 py-4">{booking.resident?.name || booking.guestName || '—'}</td>
                     <td className="px-6 py-4">{booking.room?.roomNumber}</td>
                     <td className="px-6 py-4"><span className={`rounded-full px-3 py-1 text-xs ${statusClass(booking.status)}`}>{booking.status}</span></td>
                     <td className="px-6 py-4 space-x-2">

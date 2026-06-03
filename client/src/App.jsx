@@ -8,6 +8,7 @@ import ContactPage from './pages/ContactPage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import RegisterPage from './pages/RegisterPage.jsx';
 import RoomDetailPage from './pages/RoomDetailPage.jsx';
+import BookingPage from './pages/BookingPage.jsx';
 import ResidentDashboard from './pages/dashboard/ResidentDashboard.jsx';
 import AdminDashboard from './pages/dashboard/AdminDashboard.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/rooms" element={<RoomsPage />} />
         <Route path="/rooms/:id" element={<RoomDetailPage />} />
+        <Route path="/book/:id" element={<BookingPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/contact" element={<ContactPage />} />

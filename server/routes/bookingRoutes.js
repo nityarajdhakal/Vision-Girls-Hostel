@@ -1,6 +1,7 @@
 import express from 'express';
 import {
   createBooking,
+  createBookingInquiry,
   getAllBookings,
   getMyBookings,
   updateBookingStatus,
@@ -11,6 +12,7 @@ import { admin } from '../middleware/adminMiddleware.js';
 
 const router = express.Router();
 
+router.post('/inquiry', createBookingInquiry);
 router.post('/', protect, createBooking);
 router.get('/', protect, admin, getAllBookings);
 router.get('/my', protect, getMyBookings);

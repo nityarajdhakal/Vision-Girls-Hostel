@@ -10,6 +10,38 @@ import {
   deleteBooking as deleteDemoBooking,
 } from '../data/demoStore.js';
 
+export const createBookingInquiry = asyncHandler(async (req, res) => {
+  const { roomId, name, phone } = req.body;
+
+  if (!roomId || !name || !phone) {
+    res.status(400);
+    throw new Error('Room, name and phone are required');
+  }
+
+  if (process.env.DEMO_MODE === 'true') {
+    const room = findRoomById(roomId);
+    if (!room) {
+      res.status(404);
+      throw new Error('Room not found');
+    }
+
+    const booking = createDemoBooking({
+      room: room._id,
+      guestName: name,
+      guestPhone: phone,
+      status: 'inquiry',
+    });
+
+    return res.status(201).json({
+      message: 'We will contact you as soon as possible.',
+      booking,
+    });
+  }
+
+  res.status(503);
+  throw new Error('Booking inquiry is not available');
+});
+
 export const createBooking = asyncHandler(async (req, res) => {
   const { roomId, startDate, endDate, totalAmount, advancePayment, notes } = req.body;
 
